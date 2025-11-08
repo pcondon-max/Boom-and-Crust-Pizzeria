@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boom and Crust - Pizzeria Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For Firefox */
+      input[type='range'] {
+        --thumb-color: #f97316; /* orange-500 */
+        accent-color: var(--thumb-color);
+      }
+      /* For Chrome, Safari, Opera */
+      input[type='range']::-webkit-slider-thumb {
+        background-color: var(--thumb-color);
+      }
+      /* For Edge */
+      input[type='range']::-ms-thumb {
+        background-color: var(--thumb-color);
+      }
+
+      @keyframes goal-achieved-glow {
+        0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } /* green-500 */
+        70% { box-shadow: 0 0 10px 15px rgba(34, 197, 94, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+      }
+      .goal-achieved-animate {
+        animation: goal-achieved-glow 1.5s ease-out;
+      }
+    </style>
+    <!-- Gemini AI Client Library (loaded as a standard script) -->
+    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai/dist/index.min.js"></script>
+    
+    <!-- Step 1: Load React and ReactDOM from a public CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Step 2: Load the Babel transpiler to handle JSX/TSX in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans">
+    <div id="root"></div>
+    
+    <!-- Step 3: Load your application code, telling Babel to transpile it -->
+    <script type="text/babel" src="./index.tsx"></script>
+  </body>
+</html>
